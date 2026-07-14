@@ -37,18 +37,18 @@ pipeline {
         }
 
         stage('Deploy') {
-    steps {
-        sh '''
-            . venv/bin/activate
+            steps {
+                sh '''
+                    . venv/bin/activate
 
-            pkill -f "python app.py" || true
+                    pkill -f "python app.py" || true
 
-            export BUILD_ID=dontKillMe
+                    export BUILD_ID=dontKillMe
 
-            nohup python app.py > flask.log 2>&1 &
-        '''
-    }
-}
+                    nohup python app.py > flask.log 2>&1 &
+                '''
+            }
+        }
     }
 
     post {
