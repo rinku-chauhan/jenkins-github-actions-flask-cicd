@@ -21,8 +21,8 @@ pipeline {
                 sh '''
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
+                    python -m pip install --upgrade pip
+                    python -m pip install -r requirements.txt
                 '''
             }
         }
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh '''
                     . venv/bin/activate
-                    nohup python3 app.py > flask.log 2>&1 &
+                    nohup python app.py > flask.log 2>&1 &
                 '''
             }
         }
