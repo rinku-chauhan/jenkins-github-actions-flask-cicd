@@ -16,34 +16,35 @@ pipeline {
             }
         }
 
-       stage('Install Dependencies') {
-    steps {
-        sh '''
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt
-        '''
-    }
-}
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
+            }
+        }
 
-  stage('Run Tests') {
-    steps {
-        sh '''
-            . venv/bin/activate
-            pytest
-        '''
-    }
-}
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    pytest
+                '''
+            }
+        }
 
- stage('Deploy') {
-    steps {
-        sh '''
-            . venv/bin/activate
-            nohup python3 app.py > flask.log 2>&1 &
-        '''
+        stage('Deploy') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    nohup python3 app.py > flask.log 2>&1 &
+                '''
+            }
+        }
     }
-}
 
     post {
         success {
