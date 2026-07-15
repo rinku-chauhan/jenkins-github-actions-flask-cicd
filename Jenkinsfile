@@ -72,7 +72,7 @@ ${env.BUILD_URL}
 Regards,
 Jenkins CI/CD
 """,
-                to: "YOUR_EMAIL@gmail.com"
+                to: "rinku.chn07@gmail.com"
             )
         }
 
