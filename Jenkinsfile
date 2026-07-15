@@ -52,10 +52,10 @@ pipeline {
 
     post {
 
-    success {
-        emailext(
-            subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-            body: """
+        success {
+            emailext(
+                subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
 Hello,
 
 Your Jenkins pipeline completed successfully.
@@ -70,13 +70,13 @@ ${env.BUILD_URL}
 Regards,
 Jenkins
 """
-        )
-    }
+            )
+        }
 
-    failure {
-        emailext(
-            subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-            body: """
+        failure {
+            emailext(
+                subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
 Hello,
 
 Your Jenkins pipeline has FAILED.
@@ -92,6 +92,7 @@ ${env.BUILD_URL}
 Regards,
 Jenkins
 """
-        )
+            )
+        }
     }
 }
