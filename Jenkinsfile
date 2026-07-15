@@ -21,6 +21,7 @@ pipeline {
                 sh '''
                     python3 -m venv venv
                     . venv/bin/activate
+
                     python -m pip install --upgrade pip
                     python -m pip install -r requirements.txt
                 '''
@@ -41,8 +42,6 @@ pipeline {
                 sh '''
                     . venv/bin/activate
 
-                    pkill -f "python app.py" || true
-
                     export BUILD_ID=dontKillMe
 
                     nohup python app.py > flask.log 2>&1 &
@@ -52,12 +51,53 @@ pipeline {
     }
 
     post {
+
         success {
-            echo 'Pipeline executed successfully!'
+            emailext(
+                subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+Hello,
+
+Your Jenkins pipeline completed successfully.
+
+----------------------------------------
+Project : ${env.JOB_NAME}
+Build   : #${env.BUILD_NUMBER}
+Status  : SUCCESS
+Branch  : ${env.BRANCH_NAME ?: "main"}
+
+Build URL:
+${env.BUILD_URL}
+
+Regards,
+Jenkins CI/CD
+""",
+                to: "YOUR_EMAIL@gmail.com"
+            )
         }
 
         failure {
-            echo 'Pipeline execution failed!'
+            emailext(
+                subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+Hello,
+
+Your Jenkins pipeline has FAILED.
+
+----------------------------------------
+Project : ${env.JOB_NAME}
+Build   : #${env.BUILD_NUMBER}
+Status  : FAILED
+
+Please review the build logs:
+
+${env.BUILD_URL}
+
+Regards,
+Jenkins CI/CD
+""",
+                to: "rinku.chn07@gmail.com"
+            )
         }
     }
 }
