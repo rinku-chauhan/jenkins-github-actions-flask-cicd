@@ -54,43 +54,48 @@ pipeline {
 
         success {
             emailext(
+                to: "rinku.chn07@gmail.com",
                 subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
 Hello,
 
 Your Jenkins pipeline completed successfully.
 
+----------------------------------------
 Project : ${env.JOB_NAME}
 Build   : #${env.BUILD_NUMBER}
 Status  : SUCCESS
+Branch  : ${env.BRANCH_NAME ?: "main"}
 
 Build URL:
 ${env.BUILD_URL}
 
 Regards,
-Jenkins
+Jenkins CI/CD
 """
             )
         }
 
         failure {
             emailext(
+                to: "rinku.chn07@gmail.com",
                 subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
 Hello,
 
 Your Jenkins pipeline has FAILED.
 
+----------------------------------------
 Project : ${env.JOB_NAME}
 Build   : #${env.BUILD_NUMBER}
 Status  : FAILED
 
-Please review the console output:
+Please review the build logs:
 
 ${env.BUILD_URL}
 
 Regards,
-Jenkins
+Jenkins CI/CD
 """
             )
         }
