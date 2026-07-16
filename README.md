@@ -1,4 +1,4 @@
-# 🚀 End-to-End CI/CD Pipeline for Flask Application using Jenkins & GitHub Actions
+# End-to-End CI/CD Pipeline for Flask Application using Jenkins & GitHub Actions
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask)
@@ -9,7 +9,7 @@
 
 ---
 
-# 📖 Project Overview
+# Project Overview
 
 This project demonstrates an **end-to-end CI/CD pipeline** for a Python Flask application using **Jenkins**, **GitHub Actions**, and **AWS EC2**.
 
@@ -28,7 +28,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# ✨ Key Features
+# Key Features
 
 - ✅ Jenkins Declarative Pipeline
 - ✅ GitHub Webhook Integration
@@ -46,7 +46,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# 🏗️ Architecture Overview
+# Architecture Overview
 
 ```text
                          Developer
@@ -79,7 +79,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# 🛠️ Technology Stack
+# Technology Stack
 
 | Category | Technology |
 |-----------|------------|
@@ -96,7 +96,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# 📂 Repository Structure
+# Repository Structure
 
 ```text
 .
@@ -114,7 +114,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# ⚙️ CI/CD Workflow
+# CI/CD Workflow
 
 1. Developer pushes code to GitHub.
 2. GitHub Webhook automatically triggers Jenkins.
@@ -133,7 +133,7 @@ The implementation follows a practical workflow similar to what is commonly used
 
 ---
 
-# 🌿 Branching Strategy
+# Branching Strategy
 
 | Branch | Purpose |
 |----------|---------|
@@ -144,17 +144,22 @@ Production deployment is triggered by publishing a GitHub Release.
 
 ---
 
-# 📸 Project Walkthrough
+# Project Walkthrough
+
+> **📷 Project Documentation:** Only the most significant screenshots are embedded in this README to maintain readability. A complete visual walkthrough of the project is available in the [`assets`](./assets) folder.
+
+### 📄 Pipeline Configuration
+
+The complete pipeline definitions are available in:
+
+- [`Jenkinsfile`](./Jenkinsfile)
+- [`.github/workflows/python-ci-cd.yml`](./.github/workflows/python-ci-cd.yml)
+
+---
 
 ## Jenkins Dashboard
 
 ![Jenkins Dashboard](assets/06-jenkins-dashboard.png)
-
----
-
-## Jenkins Pipeline
-
-![Pipeline Created](assets/09-jenkins-pipeline-created.png)
 
 ---
 
@@ -166,7 +171,7 @@ Production deployment is triggered by publishing a GitHub Release.
 
 ## GitHub Webhook Trigger
 
-![Webhook Trigger](assets/18-github-webhook-auto-build.png)
+![Webhook Trigger](assets/19-github-webhook-auto-build.png)
 
 ---
 
@@ -178,35 +183,35 @@ Production deployment is triggered by publishing a GitHub Release.
 
 ## GitHub Actions Workflow
 
-![GitHub Actions](assets/25-github-actions-workflow-success.png)
+![GitHub Actions](assets/27-github-actions-workflow-success.png)
 
 ---
 
 ## GitHub Actions Details
 
-![Workflow Details](assets/26-github-actions-workflow-details.png)
+![Workflow Details](assets/30-github-actions-workflow-details.png)
 
 ---
 
 ## Staging Deployment
 
-![Staging Deployment](assets/27-github-actions-staging-deployment.png)
+![Staging Deployment](assets/31-github-actions-staging-deployment.png)
 
 ---
 
 ## Production Deployment
 
-![Production Deployment](assets/28-github-actions-production-deployment.png)
+![Production Deployment](assets/32-github-actions-production-deployment.png)
 
 ---
 
 ## Flask Application Running
 
-![Flask Application](assets/15-flask-running-after-pipeline.png)
+![Flask Application](assets/07-flask-app-running.png)
 
 ---
 
-# 🎯 Learning Outcomes
+# Learning Outcomes
 
 This project helped me gain practical experience with:
 
@@ -226,7 +231,7 @@ This project helped me gain practical experience with:
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
 - Deploy using Docker containers
 - Configure Nginx as a reverse proxy
@@ -238,11 +243,9 @@ This project helped me gain practical experience with:
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Rinku Chauhan**
 
 - LinkedIn: https://linkedin.com/in/rinku-chauhan
 - GitHub: https://github.com/rinku-chauhan
-
----
