@@ -146,9 +146,10 @@ Production deployment is triggered by publishing a GitHub Release.
 
 # Project Walkthrough
 
-> **📷 Project Documentation:** Only the most significant screenshots are embedded in this README to maintain readability. A complete visual walkthrough of the project is available in the [`assets`](./assets) folder.
+> **Project Documentation:** Only the most significant screenshots are embedded in this README to maintain readability. A complete visual walkthrough of the project is available in the [`assets`](./assets) folder.
 
-### 📄 Pipeline Configuration
+
+### Pipeline Configuration
 
 The complete pipeline definitions are available in:
 
@@ -177,7 +178,7 @@ The complete pipeline definitions are available in:
 
 ## Jenkins Email Notification
 
-![Success Email](assets/22-jenkins-success-email-notification.png)
+![Success Email](assets/23-jenkins-success-email-notification)
 
 ---
 
