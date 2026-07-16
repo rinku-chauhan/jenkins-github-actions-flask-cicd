@@ -178,7 +178,7 @@ The complete pipeline definitions are available in:
 
 ## Jenkins Email Notification
 
-![Success Email](assets/23-jenkins-success-email-notification)
+![Success Email](assets/23-jenkins-success-email-notification_v2.png)
 
 ---
 
@@ -249,4 +249,4 @@ This project helped me gain practical experience with:
 **Rinku Chauhan**
 
 - LinkedIn: https://linkedin.com/in/rinku-chauhan
-- GitHub: https://github.com/rinku-chauhan
+- Email: rinku.chn20@gmail.com
