@@ -54,7 +54,7 @@ pipeline {
 
         success {
             emailext(
-                to: "rinku.chn07@gmail.com",
+                to: "YOUR-EMAIL-ADDRESS",
                 subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
 Hello,
@@ -78,7 +78,7 @@ Jenkins CI/CD
 
         failure {
             emailext(
-                to: "rinku.chn07@gmail.com",
+                to: "YOUR-EMAIL-ADDRESS",
                 subject: "❌ FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
 Hello,
